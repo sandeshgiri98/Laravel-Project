@@ -23,6 +23,7 @@
 </head>
 
 <body>
+
     <div class="form-content">
         <form method="post" action="{{ route('registration.store') }}" class="form-horizontal" onsubmit="return validateForm()">
             @csrf

@@ -10,6 +10,55 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
+    <style>   {
+        height: 125vh;
+        margin-top: 80px;
+        padding: 30px;
+        background-size: cover;
+        font-family: sans-serif;
+        }
+        header {
+        background-color: orange;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 5px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 25px 0 black;
+        }
+        header * {
+        display: inline;
+        }
+        header li {
+        margin: 20px;
+        }
+        header li a {
+        color: blue;
+        text-decoration: none;
+        }
+        </style>
+
+        <header>
+        <nav>
+        <ul>
+        <li>
+        <a href="{{'/'}}"> Home </a>
+        </li>
+        <li>
+        <a href="{{'/registration/register'}}"> Register </a>
+        </li>
+        <li>
+        <a href="{{'/product/create'}}"> Create Form </a>
+        </li>
+        <li> <a href="{{'/registration/login'}}"> Login </a>
+        </li>
+        <li>
+        <a href="{{'/viewing'}}"> View Data </a>
+        </li>
+        </ul>
+        </nav>
       <div>
         <table border="1px solid black">
             <tr>

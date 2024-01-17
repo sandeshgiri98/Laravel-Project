@@ -11,6 +11,10 @@ class RegistrationController extends Controller
     public function index(){
         return view ('registration.register');
     }
+
+    public function logon(){
+        return view('registration.login');
+    }
     public function view(){
         $registrations = Registration::all();
             return view ('registration.viewing', ['registrations'=> $registrations]);
