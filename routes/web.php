@@ -27,3 +27,4 @@ Route::get('/viewing',[RegistrationController::class , 'view'])->name('registrat
 Route::get('/registration/register',[RegistrationController::class , 'index'])->name('registration.register');
 Route::post('/registration',[RegistrationController::class, 'store'])->name('registration.store');
 Route::get('/registration/login',[RegistrationController::class , 'logon'])->name('reg.login');
+Route::get('/registration/delete/{id}',[RegistrationController::class, 'delete'])->name('red.delete');

@@ -64,7 +64,7 @@
             </div>
             <input type="submit" name="submit" value="Sign Up" class="form-button">
         </form>
-        <p class="register">Already have an account? <a href="../login/login.php">Login</a></p>
+        <p class="register">Already have an account? <a href="{{route('reg.login')}}">Login</a></p>
     </div>
 
 

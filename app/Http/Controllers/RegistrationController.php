@@ -37,4 +37,9 @@ class RegistrationController extends Controller
 
 
     }
+    public function delete($id){
+        echo $id;
+        die;
+    }
+
 }
