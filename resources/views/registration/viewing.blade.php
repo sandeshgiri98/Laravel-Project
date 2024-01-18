@@ -59,7 +59,9 @@
             <a href="{{url('/registration/delete/')}}/{{$registration->id}}">
                 <button class="btn btn-danger">Delete</button>
             </a>
-            <button class="btn btn-primary">Edit</button>
+            <a href="{{route('red.edit',['id' =>$registration->id])}}">
+                <button class="btn btn-primary">Edit</button>
+            </a>
           </td>
         </tr>
         @endforeach

@@ -28,3 +28,5 @@ Route::get('/registration/register',[RegistrationController::class , 'index'])->
 Route::post('/registration',[RegistrationController::class, 'store'])->name('registration.store');
 Route::get('/registration/login',[RegistrationController::class , 'logon'])->name('reg.login');
 Route::get('/registration/delete/{id}',[RegistrationController::class, 'delete'])->name('red.delete');
+Route::get('/registration/edit/{id}',[RegistrationController::class, 'edit'])->name('red.edit');
+Route::post('/registration/update/{id}',[RegistrationController::class, 'update'])->name('red.update');

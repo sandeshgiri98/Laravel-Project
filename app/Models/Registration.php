@@ -9,6 +9,7 @@ class Registration extends Model
 {
     use HasFactory;
     protected $table ='registrations';
+    protected $primarykey = "id";
     protected $fillable = [
         'name',
         'email',
@@ -18,4 +19,5 @@ class Registration extends Model
         'role'
 
     ];
+
 }

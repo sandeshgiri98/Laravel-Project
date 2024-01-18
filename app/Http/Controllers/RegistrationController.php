@@ -9,7 +9,10 @@ use Illuminate\Http\Request;
 class RegistrationController extends Controller
 {
     public function index(){
-        return view ('registration.register');
+        $url = url('/registration');
+        $title= 'Register';
+        $data = compact('url','title');
+        return view ('registration.register')->with($data);
     }
 
     public function logon(){
@@ -38,8 +41,37 @@ class RegistrationController extends Controller
 
     }
     public function delete($id){
-        echo $id;
-        die;
+        $url = url('registration') . "/" . $id;
+        $registration = Registration::find($id)->delete();
+        return redirect()->back();
     }
 
+    public function edit($id){
+        $registration = Registration::find($id);
+        if(is_null($registration)){
+            return redirect('registration.viewing');
+        }else{
+            $title ='Update';
+            $url = url('/registration/update'). "/" . $id;
+            $data = compact('registration','url','title');
+            return view('registration.register')-> with($data);
+        }
+    }
+    public function update($id, Request $request)
+    {
+
+        $registration = Registration::find($id);
+
+
+        $registration->name = $request->input('name');
+        $registration->email = $request->input('email');
+        $registration->contact = $request->input('contact');
+        $registration->dob = $request->input('dob');
+        $registration->role = $request->input('role');
+
+
+        $registration->save();
+
+        return redirect('viewing');
+    }
 }

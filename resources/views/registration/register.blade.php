@@ -25,44 +25,44 @@
 <body>
 
     <div class="form-content">
-        <form method="post" action="{{ route('registration.store') }}" class="form-horizontal" onsubmit="return validateForm()">
+        <form method="post" action="{{$url}}" class="form-horizontal" onsubmit="return validateForm()">
             @csrf
             @method('POST')
-            <h3>Register Now</h3>
+            <h3>{{$title}}</h3>
 
             <div class="textfield">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="Enter Your Name" value="{{ old('name') }}">
+                <input type="text" id="name" name="name" required placeholder="Enter Your Name" value="{{$registration->name}}">
                 <div class="error" id="name-error">Please enter a valid name</div>
 
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required placeholder="Enter Your Email" value="{{ old('email') }}">
+                <input type="email" id="email" name="email" required placeholder="Enter Your Email" value="{{$registration->email}}">
                 <div class="error" id="email-error">Please enter a valid email address</div>
 
                 <label for="contact">Contact No</label>
-                <input type="tel" id="contact" name="contact" required placeholder="Enter Your Phone Number" maxlength="10" value="{{ old('contact') }}">
+                <input type="tel" id="contact" name="contact" required placeholder="Enter Your Phone Number" maxlength="10" value="{{$registration->contact}}">
                 <div class="error" id="contact-error">Please enter a valid phone number</div>
 
                 <label for="dob">Date of birth</label>
-                <input type="date" id="dob" name="dob" required value="{{ old('dob') }}">
+                <input type="date" id="dob" name="dob" required value="{{$registration->dob}}">
                 <div class="error" id="dob-error">Date of birth should be greater than 14.</div>
 
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required placeholder="Use at least 8 characters with special characters and numbers" minlength="8" maxlength="16">
+                <input type="password" id="password" name="password" required placeholder="Use at least 8 characters with special characters and numbers" minlength="8" maxlength="16" value="{{$registration->password}}">
                 <div class="error" id="password-error">Use at least 8 characters with special characters like @, !, or #, and numbers like 1, 2, or 3</div>
 
-                <label for="repassword">Repassword</label>
+                {{-- <label for="repassword">Repassword</label>
                 <input type="password" id="repassword" name="repassword" required placeholder="Confirm your password" minlength="8" maxlength="16">
-                <div class="error" id="repassword-error">Password and Repassword don't match.</div>
+                <div class="error" id="repassword-error">Password and Repassword don't match.</div> --}}
 
                 <label for="role">Role</label>
                 <select name="role" id="role" class="roles" required>
-                    <option value="student" {{ old('role') == 'student' ? 'selected' : '' }}>Student</option>
-                    <option value="teacher" {{ old('role') == 'teacher' ? 'selected' : '' }}>Teacher</option>
-                    <!-- <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option> -->
+                    <option value="student" {{ $registration->role == 'student' ? 'selected' : '' }}>Student</option>
+                    <option value="teacher" {{ $registration->role == 'teacher' ? 'selected' : '' }}>Teacher</option>
+                    <!-- <option value="admin" {{ $registration->role == 'admin' ? 'selected' : '' }}>Admin</option> -->
                 </select>
             </div>
-            <input type="submit" name="submit" value="Sign Up" class="form-button">
+            <input type="submit" name="submit" value="Submit" class="form-button">
         </form>
         <p class="register">Already have an account? <a href="{{route('reg.login')}}">Login</a></p>
     </div>
